@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: timecheck-route
+  labels:
+    app: timecheck
+spec:
+  to:
+    kind: Service
+    name: timecheck-service
+  port:
+    targetPort: 8000
+  tls:
+    termination: edge
