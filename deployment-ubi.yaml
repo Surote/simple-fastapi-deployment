@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timecheck-deployment
+  labels:
+    app: timecheck
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timecheck
+  template:
+    metadata:
+      labels:
+        app: timecheck
+    spec:
+      containers:
+        - name: timecheck-fastapi
+          image: quay.io/rh_ee_swongpai/fast-localtime-check:41b0744fc363efa82967a0ecf57af542a115e7a5
+          ports:
+            - containerPort: 8000
