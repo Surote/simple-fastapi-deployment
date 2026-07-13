@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: timecheck-deployment
+  name: timecheck-deployment-ubi
   labels:
     app: timecheck
 spec:
